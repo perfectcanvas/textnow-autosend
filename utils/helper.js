@@ -8,6 +8,7 @@
  */
 module.exports.logIn = async (
     page, client, username = undefined, password = undefined) => {
+    await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36')
   await Promise.all([
     page.goto('https://www.textnow.com/login'),
     page.setDefaultNavigationTimeout(0),
