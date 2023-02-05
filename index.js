@@ -7,6 +7,8 @@ const actionFunc = async (
   const recaptchaPlugin = require('puppeteer-extra-plugin-recaptcha');
   const stealthPlugin = require('puppeteer-extra-plugin-stealth');
   const textNowHelper = require('./utils/helper');
+    
+  const {executablePath} = require('puppeteer')
 
   let browser = null;
   let page = null;
@@ -43,6 +45,7 @@ const actionFunc = async (
         '--disable-features=IsolateOrigins,site-per-process',
         '--flag-switches-begin --disable-site-isolation-trials --flag-switches-end',
       ],
+      executablePath: executablePath(),
     });
     page = await browser.newPage();
     const client = await page.target().createCDPSession();
