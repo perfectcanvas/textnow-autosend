@@ -33,7 +33,7 @@ module.exports.logIn = async (
     try{
     await page.waitForSelector('#txt-username');
     }catch{
-        console.log(page.content());
+        console.log(await page.content());
     }
     await page.type('#txt-username', username);
     await page.type('#txt-password', password);
