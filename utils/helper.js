@@ -23,7 +23,8 @@ module.exports.logIn = async (
     await Promise.all([
       page.solveRecaptchas(),
       page.waitForNavigation(),
-      await page.waitForTimeout(500);
+      page.waitForTimeout(500),
+      page.waitForSelector('#txt-username'),
     ]);
   }
 
