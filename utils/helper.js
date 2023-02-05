@@ -24,7 +24,6 @@ module.exports.logIn = async (
       page.solveRecaptchas(),
       page.waitForNavigation(),
       page.waitForTimeout(500),
-      page.waitForSelector('#txt-username'),
     ]);
   }
 
