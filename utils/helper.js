@@ -30,7 +30,11 @@ module.exports.logIn = async (
   await page.waitForTimeout(500);
     
   if (username && password) {
+    try{
     await page.waitForSelector('#txt-username');
+    }catch{
+        console.log(page.content());
+    }
     await page.type('#txt-username', username);
     await page.type('#txt-password', password);
 
