@@ -26,6 +26,11 @@ module.exports.logIn = async (
     ]);
   }
 
+await setTimeout(function(){
+ console.log( (new Date()).getSeconds() );
+ console.log("延迟三秒执行");
+//延迟一秒执行
+},3000);
   if (username && password) {
     await page.type('#txt-username', username);
     await page.type('#txt-password', password);
